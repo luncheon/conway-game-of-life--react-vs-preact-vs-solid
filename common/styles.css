@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+main {
+  display: flex;
+  width: max-content;
+  margin: auto;
+}
+@media (orientation: landscape) {
+  main > :first-child {
+    margin-right: 24px;
+  }
+}
+@media (orientation: portrait) {
+  main {
+    flex-direction: column;
+  }
+  main > :first-child {
+    margin-bottom: 24px;
+  }
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+.cell {
+  border: 1px solid #eee;
+}
+.cell-alive {
+  background: #bbb;
+}

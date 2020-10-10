@@ -1,0 +1,26 @@
+{
+  "name": "conway-game-of-life--react-vs-solid",
+  "version": "0.0.0",
+  "license": "WTFPL",
+  "private": true,
+  "scripts": {
+    "build": "npm-run-all -s build:*",
+    "build:react": "cd react && npm run build",
+    "build:solid": "cd solid && npm run build",
+    "watch": "npm-run-all -p watch:*",
+    "watch:react": "cd react && npm run watch",
+    "watch:solid": "cd solid && npm run watch",
+    "start": "npm run watch"
+  },
+  "prettier": {
+    "printWidth": 140,
+    "endOfLine": "lf",
+    "singleQuote": true,
+    "trailingComma": "all",
+    "semi": false,
+    "arrowParens": "avoid"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
