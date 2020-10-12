@@ -17,7 +17,7 @@ export default {
       extensions: ['.ts', '.tsx'],
       babelHelpers: 'bundled',
     }),
-    terser(),
+    terser({ format: { comments: false } }),
     compressedSize(),
   ],
   watch: { clearScreen: false },

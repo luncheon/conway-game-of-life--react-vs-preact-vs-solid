@@ -5,7 +5,7 @@
   "license": "WTFPL",
   "private": true,
   "scripts": {
-    "build": "rollup -c",
+    "build": "tsc -p . && rollup -c",
     "watch": "rollup -c -w"
   },
   "dependencies": {
@@ -24,6 +24,7 @@
     "@types/react": "^16.9.51",
     "@types/react-dom": "^16.9.8",
     "rollup": "^2.29.0",
-    "rollup-plugin-terser": "^7.0.2"
+    "rollup-plugin-terser": "^7.0.2",
+    "typescript": "^4.0.3"
   }
 }

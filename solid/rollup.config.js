@@ -1,5 +1,4 @@
 import babel from '@rollup/plugin-babel'
-import commonjs from '@rollup/plugin-commonjs'
 import resolve from '@rollup/plugin-node-resolve'
 import { terser } from 'rollup-plugin-terser'
 import compressedSize from '../rollup-plugin-compressed-size'
@@ -12,13 +11,12 @@ export default {
   },
   plugins: [
     resolve({ extensions: ['.js', '.ts', '.tsx'] }),
-    commonjs(),
     babel({
       presets: ['solid', '@babel/preset-typescript'],
       extensions: ['.ts', '.tsx'],
       babelHelpers: 'bundled',
     }),
-    terser(),
+    terser({ format: { comments: false } }),
     compressedSize(),
   ],
   watch: { clearScreen: false },

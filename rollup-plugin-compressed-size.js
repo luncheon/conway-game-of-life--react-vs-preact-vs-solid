@@ -13,13 +13,13 @@ const displayBytes = bytes => {
 
 export default () => ({
   async generateBundle(_, bundle) {
-    for (const [filename, chunk] of Object.entries(bundle)) {
+    for (const chunk of Object.values(bundle)) {
       const utf8 = new TextEncoder().encode(chunk.code)
-      console.log(filename)
-      console.log('  bundle: ' + displayBytes(utf8.byteLength))
-      console.log('    gzip: ' + displayBytes(zlib.gzipSync(utf8.buffer, { level: 9 }).byteLength))
-      console.log('  brotli: ' + displayBytes(zlib.brotliCompressSync(utf8.buffer).byteLength))
-      console.log()
+      console.log(`${chunk.fileName}
+  bundle: ${displayBytes(utf8.byteLength)}
+    gzip: ${displayBytes(zlib.gzipSync(utf8.buffer, { level: 9 }).byteLength)}
+  brotli: ${displayBytes(zlib.brotliCompressSync(utf8.buffer).byteLength)}
+`)
     }
   },
 })
