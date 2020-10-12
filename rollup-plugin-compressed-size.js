@@ -1,3 +1,4 @@
+// rollup-plugin-filesize (https://github.com/ritz078/rollup-plugin-filesize) does not work recently... so this is a tiny alternative.
 import zlib from 'zlib'
 
 const displayBytes = bytes => {

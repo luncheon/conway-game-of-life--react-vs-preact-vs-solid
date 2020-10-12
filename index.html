@@ -4,8 +4,10 @@
       margin: 0;
       box-sizing: border-box;
     }
-    body {
+    html, body, main {
       height: 100%;
+    }
+    main {
       display: flex;
       align-items: stretch;
     }
@@ -16,6 +18,10 @@
   </style>
 </head>
 <body>
-  <iframe src="react/index.html"></iframe>
-  <iframe src="solid/index.html"></iframe>
+  <h1>Conway's Game of Life</h1>
+  <main>
+    <iframe src="react/index.html"></iframe>
+    <iframe src="preact/index.html"></iframe>
+    <iframe src="solid/index.html"></iframe>
+  </main>
 </body>

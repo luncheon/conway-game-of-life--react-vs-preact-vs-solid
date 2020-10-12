@@ -1,13 +1,13 @@
 import * as React from 'react'
 import { render } from 'react-dom'
 import { atom, RecoilRoot, useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil'
-import { empty, init, tick } from '../common/core'
-import { animate, rangeMap } from '../common/util'
+import { init, tick } from '../common/core'
+import { animate, defaultOptions, rangeMap } from '../common/util'
 
-const cellSizeState = atom({ key: 'cellSize', default: 6 })
-const worldWidthState = atom({ key: 'worldWidth', default: 64 })
-const worldHeightState = atom({ key: 'worldHeight', default: 64 })
-const cellsState = atom({ key: 'cells', default: empty(64, 64) })
+const cellSizeState = atom({ key: 'cellSize', default: defaultOptions.cellSize })
+const worldWidthState = atom({ key: 'worldWidth', default: defaultOptions.worldWidth })
+const worldHeightState = atom({ key: 'worldHeight', default: defaultOptions.worldHeight })
+const cellsState = atom({ key: 'cells', default: init(defaultOptions.worldWidth, defaultOptions.worldHeight) })
 const runningState = atom({ key: 'running', default: false })
 const fpsState = atom({ key: 'fps', default: 0 })
 
@@ -59,19 +59,19 @@ const Controls = React.memo(() => {
           <tr>
             <td>Cell Size:</td>
             <td>
-              <input type="number" min={0} defaultValue={cellSize} onBlur={e => setCellSize(e.target.valueAsNumber)} />
+              <input type="number" min={0} value={cellSize} onChange={e => setCellSize(e.target.valueAsNumber)} />
             </td>
           </tr>
           <tr>
             <td>World Width:</td>
             <td>
-              <input type="number" min={0} defaultValue={worldWidth} onBlur={e => setWorldWidth(e.target.valueAsNumber)} />
+              <input type="number" min={0} value={worldWidth} onChange={e => setWorldWidth(e.target.valueAsNumber)} />
             </td>
           </tr>
           <tr>
             <td>World Height:</td>
             <td>
-              <input type="number" min={0} defaultValue={worldHeight} onBlur={e => setWorldHeight(e.target.valueAsNumber)} />
+              <input type="number" min={0} value={worldHeight} onChange={e => setWorldHeight(e.target.valueAsNumber)} />
             </td>
           </tr>
         </tbody>
@@ -83,6 +83,12 @@ const Controls = React.memo(() => {
   )
 })
 
+const Link = React.memo(({ href, children }: { href: string; children: React.ReactChild | React.ReactChild[] }) => (
+  <a target="_blank" rel="noopener noreferrer" href={href}>
+    {children}
+  </a>
+))
+
 const App = React.memo(() => {
   const setFps = useSetRecoilState(fpsState)
   const setCells = useSetRecoilState(cellsState)
@@ -90,6 +96,7 @@ const App = React.memo(() => {
   const worldHeight = useRecoilValue(worldHeightState)
   const running = useRecoilValue(runningState)
   const [cancel, setCancel] = React.useState<(() => void) | undefined>(undefined)
+  const firstTime = React.useRef(true)
 
   React.useEffect(() => {
     if (running) {
@@ -101,16 +108,17 @@ const App = React.memo(() => {
   }, [running])
 
   React.useEffect(() => {
-    setCells(init(worldWidth, worldHeight))
+    if (firstTime.current) {
+      firstTime.current = false
+    } else {
+      setCells(init(worldWidth, worldHeight))
+    }
   }, [worldWidth, worldHeight])
 
   return (
     <>
       <h1 style={{ textAlign: 'center' }}>
-        Conway's Game of Life in{' '}
-        <a target="_blank" rel="noopener noreferrer" href="https://reactjs.org/">
-          React
-        </a>
+        <Link href="https://reactjs.org/">React</Link> + <Link href="https://recoiljs.org/">Recoil</Link>
       </h1>
       <main>
         <World />

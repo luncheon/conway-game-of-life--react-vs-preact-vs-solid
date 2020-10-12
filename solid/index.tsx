@@ -1,11 +1,11 @@
 import { createEffect, createSignal } from 'solid-js'
 import { render } from 'solid-js/dom'
 import { init, tick } from '../common/core'
-import { animate, rangeMap } from '../common/util'
+import { animate, defaultOptions, rangeMap } from '../common/util'
 
-const [cellSize, setCellSize] = createSignal(6)
-const [worldWidth, setWorldWidth] = createSignal(64)
-const [worldHeight, setWorldHeight] = createSignal(64)
+const [cellSize, setCellSize] = createSignal(defaultOptions.cellSize)
+const [worldWidth, setWorldWidth] = createSignal(defaultOptions.worldWidth)
+const [worldHeight, setWorldHeight] = createSignal(defaultOptions.worldHeight)
 const [cells, setCells] = createSignal(init(worldWidth(), worldHeight()))
 const [running, setRunning] = createSignal(false)
 const [fps, setFps] = createSignal(0)
@@ -82,7 +82,6 @@ const App = () => {
   return (
     <>
       <h1 style="text-align: center">
-        Conway's Game of Life in{' '}
         <a target="_blank" rel="noopener noreferrer" href="https://github.com/ryansolid/solid">
           Solid
         </a>

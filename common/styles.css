@@ -11,23 +11,15 @@ main {
   display: flex;
   width: max-content;
   margin: auto;
+  flex-direction: column;
 }
-@media (orientation: landscape) {
-  main > :first-child {
-    margin-right: 24px;
-  }
-}
-@media (orientation: portrait) {
-  main {
-    flex-direction: column;
-  }
-  main > :first-child {
-    margin-bottom: 24px;
-  }
+main > :first-child {
+  margin-bottom: 24px;
 }
 
 h1 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  margin: 8px 0;
 }
 
 .cell {

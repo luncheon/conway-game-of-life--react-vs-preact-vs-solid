@@ -1,13 +1,15 @@
 {
-  "name": "conway-game-of-life--react-vs-solid",
+  "name": "conway-game-of-life--react-vs-preact-vs-solid",
   "version": "0.0.0",
   "license": "WTFPL",
   "private": true,
   "scripts": {
     "build": "npm-run-all -s build:*",
+    "build:preact": "cd preact && npm run build",
     "build:react": "cd react && npm run build",
     "build:solid": "cd solid && npm run build",
     "watch": "npm-run-all -p watch:*",
+    "watch:preact": "cd preact && npm run watch",
     "watch:react": "cd react && npm run watch",
     "watch:solid": "cd solid && npm run watch",
     "start": "npm run watch"

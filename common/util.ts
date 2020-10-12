@@ -30,3 +30,9 @@ export const animate = (callback: () => void, fpsCallback: (fps: number) => void
     clearInterval(intervalId)
   }
 }
+
+export const defaultOptions = {
+  cellSize: 3,
+  worldWidth: 128,
+  worldHeight: 128,
+}

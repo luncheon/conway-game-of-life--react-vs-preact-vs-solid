@@ -39,8 +39,6 @@ export const init = (X: number, Y: number, aliveRatio = 0.25) => {
   return bits
 }
 
-export const empty = (X: number, Y: number) => new BitTable(X, Y)
-
 export type NextCellStateSelector = (current: BitTable, x: number, y: number) => unknown
 
 export const createNextCellStateSelector = (
