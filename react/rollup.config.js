@@ -6,10 +6,10 @@ import { terser } from 'rollup-plugin-terser'
 import compressedSize from '../rollup-plugin-compressed-size'
 
 export default {
-  input: 'index.tsx',
+  input: 'react-index.tsx',
   output: {
     format: 'iife',
-    file: 'index.js',
+    file: 'react-index.js',
   },
   plugins: [
     replace({ 'process.env.NODE_ENV': '"production"' }),

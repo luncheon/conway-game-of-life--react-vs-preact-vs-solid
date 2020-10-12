@@ -13,5 +13,5 @@
     "noUnusedParameters": true,
     "newLine": "LF"
   },
-  "files": ["index.tsx"]
+  "files": ["preact-index.tsx"]
 }

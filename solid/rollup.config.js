@@ -4,10 +4,10 @@ import { terser } from 'rollup-plugin-terser'
 import compressedSize from '../rollup-plugin-compressed-size'
 
 export default {
-  input: 'index.tsx',
+  input: 'solid-index.tsx',
   output: {
     format: 'iife',
-    file: 'index.js',
+    file: 'solid-index.js',
   },
   plugins: [
     resolve({ extensions: ['.js', '.ts', '.tsx'] }),

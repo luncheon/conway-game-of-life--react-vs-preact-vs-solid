@@ -11,5 +11,5 @@
     "noUnusedParameters": true,
     "newLine": "LF"
   },
-  "files": ["index.tsx"]
+  "files": ["react-index.tsx"]
 }
