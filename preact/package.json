@@ -1,7 +1,6 @@
 {
   "name": "conway-game-of-life-preact",
   "version": "0.0.0",
-  "description": "",
   "license": "WTFPL",
   "private": true,
   "scripts": {

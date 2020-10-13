@@ -8,6 +8,7 @@
     "build:react": "cd react && npm run build",
     "build:preact": "cd preact && npm run build",
     "build:solid": "cd solid && npm run build",
+    "build:vue": "cd vue && npm run build",
     "watch": "npm-run-all -p watch:*",
     "watch:react": "cd react && npm run watch",
     "watch:preact": "cd preact && npm run watch",

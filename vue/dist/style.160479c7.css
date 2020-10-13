@@ -1,0 +1,1 @@
+*{box-sizing:border-box}table{border-collapse:collapse;border-spacing:0}main{display:flex;width:max-content;margin:auto;flex-direction:column}main>:first-child{margin-bottom:24px}h1{font-size:1.25rem;margin:8px 0}.cell{border:1px solid #eee}.cell-alive{background:#bbb}
