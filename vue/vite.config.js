@@ -1,9 +1,7 @@
-import path from 'path'
+import vue from '@vitejs/plugin-vue'
 
 module.exports = {
-  base: '.',
+  base: './',
   assetsDir: '.',
-  alias: {
-    '/common/': path.resolve(__dirname, '../common/'),
-  },
+  plugins: [vue()],
 }

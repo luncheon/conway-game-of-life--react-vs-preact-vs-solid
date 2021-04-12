@@ -1,6 +1,6 @@
 import { ref, shallowRef, watch } from 'vue'
-import { defaultNextCellStateSelector, init, tick } from '/common/core'
-import { animate, defaultOptions } from '/common/util'
+import { defaultNextCellStateSelector, init, tick } from '../../common/core'
+import { animate, defaultOptions } from '../../common/util'
 
 export const cellSize = ref(defaultOptions.cellSize)
 export const worldWidth = ref(defaultOptions.worldWidth)

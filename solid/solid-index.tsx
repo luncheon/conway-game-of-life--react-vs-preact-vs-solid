@@ -1,5 +1,5 @@
-import { createEffect, createSignal } from 'solid-js'
-import { render } from 'solid-js/dom'
+import { createEffect, createSignal, JSX } from 'solid-js'
+import { render } from 'solid-js/web'
 import { init, tick } from '../common/core'
 import { animate, defaultOptions, rangeMap } from '../common/util'
 
@@ -43,19 +43,19 @@ const Controls = () => (
         <tr>
           <td>Cell Size:</td>
           <td>
-            <input type="number" min={0} value={cellSize()} onChange={e => setCellSize(e.target.valueAsNumber)} />
+            <input type="number" min={0} value={cellSize()} onChange={e => setCellSize(e.currentTarget.valueAsNumber)} />
           </td>
         </tr>
         <tr>
           <td>World Width:</td>
           <td>
-            <input type="number" min={0} value={worldWidth()} onChange={e => setWorldWidth(e.target.valueAsNumber)} />
+            <input type="number" min={0} value={worldWidth()} onChange={e => setWorldWidth(e.currentTarget.valueAsNumber)} />
           </td>
         </tr>
         <tr>
           <td>World Height:</td>
           <td>
-            <input type="number" min={0} value={worldHeight()} onChange={e => setWorldHeight(e.target.valueAsNumber)} />
+            <input type="number" min={0} value={worldHeight()} onChange={e => setWorldHeight(e.currentTarget.valueAsNumber)} />
           </td>
         </tr>
       </tbody>

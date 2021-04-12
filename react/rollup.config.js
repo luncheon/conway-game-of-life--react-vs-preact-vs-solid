@@ -12,7 +12,7 @@ export default {
     file: 'react-index.js',
   },
   plugins: [
-    replace({ 'process.env.NODE_ENV': '"production"' }),
+    replace({ values: { 'process.env.NODE_ENV': '"production"' }, preventAssignment: false }),
     resolve({ extensions: ['.js', '.ts', '.tsx'] }),
     commonjs(),
     babel({

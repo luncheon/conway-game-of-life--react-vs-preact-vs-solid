@@ -26,7 +26,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import * as state from './state'
-import { init } from '/common/core'
+import { init } from '../../common/core'
 
 export default defineComponent(() => ({ ...state, init }))
 </script>
